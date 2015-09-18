@@ -10,6 +10,7 @@ import org.scribe.model.Verifier;
 import org.scribe.oauth.OAuthService;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class TwitterBot {
@@ -38,8 +39,11 @@ public class TwitterBot {
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
     TwitterBot bot = new TwitterBot();
-    Tweet t = new Tweet(bot, "test tweet please ignore");
-    t.post();
+    // bot.tweet("test tweet please ignore");
+  }
+
+  public Response tweet(String status) throws UnsupportedEncodingException {
+    return new Tweet(this, status).post();
   }
 
   private void auth() throws IOException {
