@@ -18,7 +18,7 @@ public class TwitterBot {
       PROTECTED_RESOURCE_URL =
       "https://api.twitter.com/1.1/account/verify_credentials.json";
   Token accessToken;
-  String tokenPath = "cache/accesstoken";
+  String tokenPath = "accesstoken";
   private OAuthService service = new ServiceBuilder()
       .provider(TwitterApi.class)
       .apiKey("UCm05JKfpI4fH1PpFQSP58ONn")
@@ -37,7 +37,9 @@ public class TwitterBot {
   }
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
-    TwitterBot t = new TwitterBot();
+    TwitterBot bot = new TwitterBot();
+    Tweet t = new Tweet(bot, "test tweet please ignore");
+    t.post();
   }
 
   private void auth() throws IOException {
@@ -70,9 +72,8 @@ public class TwitterBot {
   private boolean testAuth() {
     // Now let's go and ask for a protected resource!
     System.out.println("Testing authentication...");
-    OAuthRequest request = new OAuthRequest(Verb.GET, PROTECTED_RESOURCE_URL);
-    service.signRequest(accessToken, request);
-    Response response = request.send();
+
+    Response response = sendRequest(new OAuthRequest(Verb.GET, PROTECTED_RESOURCE_URL));
     System.out.println(response.isSuccessful() ? "Success" : "Failure");
     return response.isSuccessful();
   }
@@ -83,5 +84,10 @@ public class TwitterBot {
 
   private Token deserializeToken() throws IOException, ClassNotFoundException {
     return (Token) new Deserializer(tokenPath).deserialize();
+  }
+
+  public Response sendRequest(OAuthRequest r) {
+    service.signRequest(accessToken, r);
+    return r.send();
   }
 }
