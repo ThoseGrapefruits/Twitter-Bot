@@ -1,4 +1,4 @@
-package me.loganmoore;
+package me.loganmoore.twitter;
 
 import org.scribe.builder.ServiceBuilder;
 import org.scribe.builder.api.TwitterApi;

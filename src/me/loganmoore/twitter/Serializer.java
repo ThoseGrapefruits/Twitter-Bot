@@ -1,4 +1,4 @@
-package me.loganmoore;
+package me.loganmoore.twitter;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

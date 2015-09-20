@@ -1,4 +1,4 @@
-package me.loganmoore;
+package me.loganmoore.twitter;
 
 import org.scribe.model.OAuthRequest;
 import org.scribe.model.Response;
