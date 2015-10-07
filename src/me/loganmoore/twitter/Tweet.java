@@ -10,7 +10,6 @@ public class Tweet {
 
   // CONSTANTS
   public static final String URL = "https://api.twitter.com/1.1/statuses/update.json";
-  public static final String CHARSET = java.nio.charset.StandardCharsets.UTF_8.name();
 
   String status;
   TwitterBot bot;
