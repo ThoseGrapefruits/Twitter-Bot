@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
+import me.loganmoore.poems.PoemGenerator;
+
 public class TwitterBot {
 
   private static final String
@@ -39,7 +41,7 @@ public class TwitterBot {
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
     TwitterBot bot = new TwitterBot();
-    // bot.tweet("test tweet please ignore");
+    PoemGenerator pg = new PoemGenerator("data/2147-0-poe-1.txt", "test");
   }
 
   public Response tweet(String status) throws UnsupportedEncodingException {
@@ -58,7 +60,7 @@ public class TwitterBot {
     System.out.println("Got the Request Token!");
     System.out.println();
 
-    System.out.println("Now go authorize here:");
+    System.out.println("Go authorize here, please:");
     System.out.println(service.getAuthorizationUrl(requestToken));
     System.out.println("And paste the verifier here");
     System.out.print(">>");
