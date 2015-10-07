@@ -10,5 +10,6 @@
     <orderEntry type="library" name="org.apache.httpcomponents:httpcore:4.4.1" level="project" />
     <orderEntry type="library" name="org.apache.httpcomponents:httpclient:4.2.6" level="project" />
     <orderEntry type="library" name="org.apache.opennlp:opennlp-uima:1.5.3" level="project" />
+    <orderEntry type="library" name="org.apache.commons:commons-lang3:3.3.2" level="project" />
   </component>
 </module>
