@@ -58,7 +58,7 @@ public class PoemGenerator {
   }
 
   private void trainTokens(File tokenModelFile) throws IOException {
-
+    // TODO
   }
 
   public String generate(int poemLength, int lineLength) {
@@ -66,6 +66,6 @@ public class PoemGenerator {
   }
 
   public String generate(int poemLength, int lineLength, String subject) {
-
+    // TODO
   }
 }

@@ -41,7 +41,7 @@ public class TwitterBot {
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
     TwitterBot bot = new TwitterBot();
-    PoemGenerator pg = new PoemGenerator("data/2147-0-poe-1.txt", "test");
+    PoemGenerator pg = new PoemGenerator("data/2147-0-poe-1.txt");
   }
 
   public Response tweet(String status) throws UnsupportedEncodingException {

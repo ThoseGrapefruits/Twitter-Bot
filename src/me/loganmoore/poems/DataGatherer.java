@@ -108,8 +108,6 @@ public class DataGatherer {
         }
       }
     }
-
-    updateLikelihoods();
   }
 
   private void updateLikelihoods() {
